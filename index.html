@@ -1,0 +1,1257 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio pribadi Anugerah Saputri.">
+
+  <title>Portofolio | Anugerah Saputri</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================
+       PORTOFOLIO AESTHETIC
+       ========================== */
+    :root {
+      --cream: #fffaf6;
+      --paper: #ffffff;
+      --pink: #f4dce4;
+      --pink-strong: #c87991;
+      --purple: #e8e1f5;
+      --yellow: #f8edc9;
+      --ink: #302a35;
+      --muted: #79717d;
+      --line: #eee4e7;
+      --shadow: 0 18px 50px rgba(74, 48, 63, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .accent {
+      color: var(--pink-strong);
+    }
+
+    /* NAVIGASI */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 250, 246, .91);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(238, 228, 231, .85);
+    }
+
+    .nav-content {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font: 700 1.8rem "Playfair Display", serif;
+      letter-spacing: -.06em;
+    }
+
+    .logo span {
+      color: var(--pink-strong);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-strong);
+    }
+
+    .nav-links .nav-cta {
+      color: var(--ink);
+      border: 1px solid #e4d6dc;
+      border-radius: 99px;
+      padding: 10px 16px;
+    }
+
+    .menu-toggle,
+    .menu-icon {
+      display: none;
+    }
+
+    /* BERANDA */
+    .hero {
+      padding-top: 80px;
+      padding-bottom: 115px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      color: #9c5b72;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--pink-strong);
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px #f8e9ee;
+    }
+
+    h1,
+    h2 {
+      font-family: "Playfair Display", serif;
+      letter-spacing: -.045em;
+      line-height: 1.12;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 6vw, 5.6rem);
+      margin: 24px 0;
+    }
+
+    .hero-lead {
+      max-width: 510px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .hero-text {
+      max-width: 520px;
+      color: var(--muted);
+      margin-top: 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 13px 20px;
+      border-radius: 13px;
+      font-size: .92rem;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .button-dark {
+      color: white;
+      background: var(--ink);
+    }
+
+    .button-outline {
+      border: 1px solid #e6d8de;
+      background: rgba(255, 255, 255, .6);
+    }
+
+    .social-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 43px;
+    }
+
+    .social-line {
+      display: block;
+      width: 35px;
+      height: 1px;
+      background: var(--pink-strong);
+    }
+
+    /* FOTO PROFIL */
+    .hero-visual {
+      position: relative;
+      min-height: 450px;
+      display: grid;
+      place-items: center;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 48% 52% 58% 42% / 45% 42% 58% 55%;
+    }
+
+    .blob-one {
+      width: 340px;
+      height: 365px;
+      background: var(--pink);
+      transform: rotate(-11deg);
+    }
+
+    .blob-two {
+      width: 290px;
+      height: 310px;
+      background: var(--purple);
+      transform: translate(28px, 10px) rotate(15deg);
+      opacity: .8;
+    }
+
+    .photo-card {
+      position: relative;
+      z-index: 1;
+      width: 285px;
+      height: 355px;
+      border: 9px solid white;
+      border-radius: 46% 46% 25px 25px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #f8e8ee;
+      transform: rotate(2deg);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-content: center;
+      text-align: center;
+      font-size: 5rem;
+      color: #b96f88;
+      background: linear-gradient(150deg, #f8e5ec, #eee8fa);
+    }
+
+    .photo-placeholder span {
+      display: block;
+      font: 600 .85rem "DM Sans", sans-serif;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 13px 16px;
+      background: white;
+      border: 1px solid rgba(238, 228, 231, .8);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card strong,
+    .floating-card small {
+      display: block;
+    }
+
+    .floating-card strong {
+      font-size: .83rem;
+    }
+
+    .floating-card small {
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    .float-icon,
+    .heart {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--purple);
+      color: #8c73bd;
+      font-size: 1.2rem;
+    }
+
+    .heart {
+      background: #fae9ee;
+      color: var(--pink-strong);
+      font-size: 1.6rem;
+    }
+
+    .card-top {
+      top: 65px;
+      right: -8px;
+    }
+
+    .card-bottom {
+      bottom: 55px;
+      left: -10px;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: var(--pink-strong);
+      font-size: 2rem;
+    }
+
+    .sparkle-one {
+      top: 28px;
+      left: 28px;
+    }
+
+    .sparkle-two {
+      right: 15px;
+      bottom: 25px;
+    }
+
+    /* JUDUL SETIAP BAGIAN */
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin: 14px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* TENTANG SAYA */
+    .about-section {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-story {
+      padding: 34px 38px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #fcf0f3, #f3effa);
+    }
+
+    .quote-mark {
+      font: 700 5rem "Playfair Display", serif;
+      color: var(--pink-strong);
+      line-height: .9;
+    }
+
+    .about-story h3 {
+      font: 600 1.65rem/1.35 "Playfair Display", serif;
+      margin-bottom: 18px;
+    }
+
+    .about-story p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: .94rem;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .detail-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--cream);
+    }
+
+    .detail-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 36px;
+      height: 36px;
+      border-radius: 11px;
+      background: var(--pink);
+      color: #9c5b72;
+    }
+
+    .detail-card small,
+    .detail-card strong {
+      display: block;
+    }
+
+    .detail-card small {
+      font-size: .73rem;
+      color: var(--muted);
+    }
+
+    .detail-card strong {
+      font-size: .84rem;
+      overflow-wrap: anywhere;
+    }
+
+    /* KEAHLIAN */
+    .skills-section {
+      background: #fbf6f7;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 21px;
+      padding: 27px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-symbol {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .pink {
+      background: var(--pink);
+      color: #9c5b72;
+    }
+
+    .purple {
+      background: var(--purple);
+      color: #7c67a8;
+    }
+
+    .yellow {
+      background: var(--yellow);
+      color: #947b35;
+    }
+
+    .skill-card h3,
+    .project-info h3 {
+      font: 700 1.25rem "Playfair Display", serif;
+    }
+
+    .skill-card p {
+      min-height: 76px;
+      color: var(--muted);
+      font-size: .88rem;
+      margin: 10px 0 20px;
+    }
+
+    .skill-level {
+      height: 6px;
+      border-radius: 99px;
+      background: #f1e9ed;
+      overflow: hidden;
+    }
+
+    .skill-level span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--pink-strong), #b6a5dc);
+    }
+
+    .skill-card > small {
+      display: block;
+      color: var(--muted);
+      margin-top: 9px;
+      font-size: .73rem;
+    }
+
+    /* PROYEK */
+    .projects-section {
+      background: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: white;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .project-cover {
+      min-height: 205px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .cover-pink {
+      background: linear-gradient(135deg, #f8dfe7, #f9edf0);
+    }
+
+    .cover-purple {
+      background: linear-gradient(135deg, #e7def6, #f4effb);
+    }
+
+    .cover-yellow {
+      background: linear-gradient(135deg, #f8edcc, #f9f4e5);
+    }
+
+    .cover-emoji {
+      font-size: 4.5rem;
+      filter: drop-shadow(0 10px 12px rgba(70, 50, 60, .12));
+      transition: transform .3s;
+    }
+
+    .project-card:hover .cover-emoji {
+      transform: scale(1.12) rotate(-5deg);
+    }
+
+    .cover-label {
+      position: absolute;
+      bottom: 15px;
+      left: 18px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: rgba(48, 42, 53, .65);
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--pink-strong);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .project-meta span:last-child {
+      color: #a39aa4;
+    }
+
+    .project-info p {
+      min-height: 76px;
+      color: var(--muted);
+      font-size: .87rem;
+      margin: 10px 0 18px;
+    }
+
+    .project-link {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 13px;
+      border-top: 1px solid var(--line);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .project-link span {
+      color: var(--pink-strong);
+    }
+
+    /* KONTAK */
+    .contact-section {
+      background: var(--cream);
+    }
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      gap: 55px;
+      align-items: center;
+      padding: 58px;
+      border-radius: 28px;
+      background: var(--ink);
+      color: white;
+    }
+
+    .contact-copy,
+    .contact-links {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-copy .eyebrow {
+      color: #f0b9cb;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(2.3rem, 4vw, 3.5rem);
+      margin: 17px 0;
+    }
+
+    .accent-light {
+      color: #efb9cb;
+    }
+
+    .contact-copy p {
+      max-width: 420px;
+      color: #d4ccd6;
+      font-size: .94rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .06);
+      transition: background .2s;
+    }
+
+    .contact-links a:hover {
+      background: rgba(255, 255, 255, .13);
+    }
+
+    .contact-links a > span {
+      display: grid;
+      place-items: center;
+      width: 37px;
+      height: 37px;
+      flex: 0 0 37px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .contact-links a div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .contact-links small,
+    .contact-links strong {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links small {
+      color: #c9becd;
+      font-size: .7rem;
+    }
+
+    .contact-links strong {
+      font-size: .83rem;
+    }
+
+    .contact-links b {
+      color: #efb9cb;
+    }
+
+    .contact-decoration {
+      position: absolute;
+      right: -35px;
+      bottom: -115px;
+      font-size: 17rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, .035);
+    }
+
+    /* FOOTER */
+    footer {
+      background: white;
+    }
+
+    .footer-content {
+      min-height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .footer-content p,
+    .footer-content > span {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer-content .logo {
+      font-size: 1.5rem;
+    }
+
+    /* RESPONSIF TABLET */
+    @media (max-width: 900px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero-grid {
+        gap: 25px;
+      }
+
+      .hero-visual {
+        transform: scale(.9);
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .about-grid {
+        gap: 25px;
+      }
+
+      .contact-panel {
+        padding: 38px;
+        gap: 30px;
+      }
+    }
+
+    /* RESPONSIF PONSEL */
+    @media (max-width: 700px) {
+      .nav-content {
+        min-height: 70px;
+        flex-wrap: wrap;
+      }
+
+      .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 1.45rem;
+        padding: 5px 10px;
+        border-radius: 10px;
+        background: var(--pink);
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 5px 0 16px;
+      }
+
+      .nav-links a {
+        padding: 11px 5px;
+      }
+
+      .nav-links .nav-cta {
+        text-align: center;
+        margin-top: 6px;
+      }
+
+      .menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      .hero {
+        padding-top: 55px;
+        padding-bottom: 65px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-copy .hero-lead,
+      .hero-copy .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .social-note {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-height: 410px;
+        margin-top: 12px;
+        transform: scale(.9);
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card p,
+      .project-info p {
+        min-height: 0;
+      }
+
+      .project-cover {
+        min-height: 190px;
+      }
+
+      .contact-panel {
+        padding: 32px 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        padding: 25px 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: 91%;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .hero-visual {
+        margin-left: -15px;
+        margin-right: -15px;
+        transform: scale(.78);
+        min-height: 360px;
+      }
+
+      .profile-details {
+        grid-template-columns: 1fr;
+      }
+
+      .about-story {
+        padding: 25px;
+      }
+
+      .button {
+        padding: 12px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGASI -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a class="logo" href="#home">Putri<span>.</span></a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon" aria-label="Buka navigasi">☰</label>
+
+      <nav class="nav-links">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact" class="nav-cta">Hubungi Saya ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- BERANDA -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <span class="dot"></span>
+            PORTOFOLIO PRIBADI
+          </span>
+
+          <h1>
+            Halo, saya<br>
+            <span class="accent">Anugerah Saputri.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Mahasiswa kreatif yang tertarik pada teknologi, desain, dan pengembangan website.
+          </p>
+
+          <p class="hero-text">
+            Saya senang belajar hal baru, mengembangkan ide, dan membuat sesuatu yang bermanfaat.
+            Selamat datang di ruang kecil yang berisi cerita dan karya saya.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projects">Lihat Karya <span>↗</span></a>
+            <a class="button button-outline" href="#about">Kenali Saya</a>
+          </div>
+
+          <div class="social-note">
+            <span class="social-line"></span>
+            Terus belajar · Terus bertumbuh
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="blob blob-one"></div>
+          <div class="blob blob-two"></div>
+
+          <div class="photo-card">
+            <img
+              src="ugga.jpeg"
+              alt="Foto profil Anugerah Saputri"
+              onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='grid'"
+            >
+            <div class="photo-placeholder" id="photo-placeholder">
+              ♡
+              <span>Foto kamu di sini</span>
+            </div>
+          </div>
+
+          <div class="floating-card card-top">
+            <span class="float-icon">✦</span>
+            <div>
+              <strong>Creative mind</strong>
+              <small>Ide jadi karya</small>
+            </div>
+          </div>
+
+          <div class="floating-card card-bottom">
+            <span class="heart">♡</span>
+            <div>
+              <strong>Made with passion</strong>
+              <small>Selalu berkembang</small>
+            </div>
+          </div>
+
+          <span class="sparkle sparkle-one">✧</span>
+          <span class="sparkle sparkle-two">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">SEDIKIT TENTANG SAYA</span>
+          <h2>Di balik layar <span class="accent">karya saya.</span></h2>
+          <p>Kenali saya lebih dekat melalui cerita, perjalanan, dan hal yang saya sukai.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-story">
+            <span class="quote-mark">“</span>
+            <h3>Saya percaya setiap proses adalah kesempatan untuk bertumbuh.</h3>
+
+            <p>
+              Perkenalkan, saya <strong>Anugerah Saputri</strong>.
+              Saya adalah mahasiswa yang memiliki rasa ingin tahu tinggi dan senang
+              mengeksplorasi dunia digital. Saya menikmati proses belajar, mencoba ide baru,
+              serta bekerja sama untuk menghasilkan sesuatu yang bermakna.
+            </p>
+
+            <p>
+              Ke depannya, saya ingin terus meningkatkan kemampuan dan membangun karya
+              yang bukan hanya menarik secara visual, tetapi juga mudah digunakan.
+            </p>
+          </article>
+
+          <div class="profile-details">
+            <div class="detail-card">
+              <span class="detail-icon">✿</span>
+              <div>
+                <small>Nama lengkap</small>
+                <strong>Anugerah Saputri</strong>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <span class="detail-icon">⌂</span>
+              <div>
+                <small>Domisili</small>
+                <strong>Luwu, Sulawesi Selatan</strong>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <span class="detail-icon">▤</span>
+              <div>
+                <small>Pendidikan</small>
+                <strong>Universitas Cokroaminoto Palopo</strong>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <span class="detail-icon">♡</span>
+              <div>
+                <small>Minat</small>
+                <strong>Desain UI/UX & Website</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">HAL YANG SAYA KUASAI</span>
+          <h2>Keahlian & <span class="accent">minat.</span></h2>
+          <p>Berikut beberapa kemampuan yang sedang saya gunakan dan kembangkan.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-symbol pink">⌘</div>
+            <h3>HTML & CSS</h3>
+            <p>Membangun struktur dan tampilan website yang rapi serta responsif.</p>
+            <div class="skill-level"><span style="width:75%"></span></div>
+            <small>Terus berkembang</small>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-symbol purple">✳</div>
+            <h3>UI/UX Design</h3>
+            <p>Menyusun layout dan pengalaman pengguna yang mudah dipahami.</p>
+            <div class="skill-level"><span style="width:70%"></span></div>
+            <small>Terus berkembang</small>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-symbol yellow">✧</div>
+            <h3>Kerja Tim</h3>
+            <p>Berbagi ide, berkomunikasi, dan bekerja sama menyelesaikan tugas.</p>
+            <div class="skill-level"><span style="width:85%"></span></div>
+            <small>Senang berkolaborasi</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">PILIHAN KARYA</span>
+          <h2>Proyek <span class="accent">pilihan.</span></h2>
+          <p>Contoh proyek yang dapat kamu sesuaikan dengan hasil tugas atau karya pribadimu.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-cover cover-pink">
+              <span class="cover-emoji">🍓</span>
+              <span class="cover-label">01 / UI DESIGN</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>UI/UX DESIGN</span>
+                <span>2026</span>
+              </div>
+              <h3>Aplikasi Resep Makanan</h3>
+              <p>Konsep aplikasi untuk mencari resep, melihat bahan, dan mengikuti langkah memasak.</p>
+              <a href="#contact" class="project-link">
+                Diskusikan proyek <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover cover-purple">
+              <span class="cover-emoji">🛍️</span>
+              <span class="cover-label">02 / WEB DESIGN</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>WEB DESIGN</span>
+                <span>2026</span>
+              </div>
+              <h3>Website Toko Online</h3>
+              <p>Rancangan katalog produk dengan tampilan sederhana, bersih, dan mudah digunakan.</p>
+              <a href="#contact" class="project-link">
+                Diskusikan proyek <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover cover-yellow">
+              <span class="cover-emoji">💻</span>
+              <span class="cover-label">03 / DEVELOPMENT</span>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span>WEB DEVELOPMENT</span>
+                <span>2026</span>
+              </div>
+              <h3>Website Portofolio</h3>
+              <p>Website pribadi untuk menampilkan biodata, keahlian, perjalanan, dan karya.</p>
+              <a href="#contact" class="project-link">
+                Diskusikan proyek <span>↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-panel">
+        <div class="contact-copy">
+          <span class="eyebrow">PUNYA IDE MENARIK?</span>
+          <h2>
+            Mari buat sesuatu<br>
+            <span class="accent-light">yang bermakna.</span>
+          </h2>
+          <p>
+            Terima kasih sudah berkunjung! Hubungi saya untuk bertukar ide,
+            belajar bersama, atau berkolaborasi.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:anugerahsaputri81@gmail.com">
+            <span>✉</span>
+            <div>
+              <small>Email</small>
+              <strong>anugerahsaputri81@gmail.com</strong>
+            </div>
+            <b>↗</b>
+          </a>
+
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+            <span>◎</span>
+            <div>
+              <small>Instagram</small>
+              <strong>@anugerahsaputri18</strong>
+            </div>
+            <b>↗</b>
+          </a>
+
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <span>in</span>
+            <div>
+              <small>LinkedIn</small>
+              <strong>Anugerah Saputri</strong>
+            </div>
+            <b>↗</b>
+          </a>
+        </div>
+
+        <div class="contact-decoration">♡</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <a class="logo" href="#home">naya<span>.</span></a>
+      <p>Dibuat dengan ♡ dan semangat untuk terus belajar.</p>
+      <span>© <span id="year">2026</span> Anugerah Saputri</span>
+    </div>
+  </footer>
+
+  <script>
+    // Tahun otomatis mengikuti tahun saat website dibuka.
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tutup menu navigasi ponsel setelah salah satu menu dipilih.
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(function(link) {
+      link.addEventListener("click", function() {
+        menuToggle.checked = false;
+      });
+    });
+  </script>
+</body>
+</html>
